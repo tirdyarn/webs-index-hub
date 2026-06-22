@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 产品与服务摘要</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fce6c9 0%, #fcd9b6 40%, #f7cba0 70%, #f0b991 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.6;
+            color: #3f2e1c;
+        }
+
+        .card {
+            max-width: 980px;
+            width: 100%;
+            background: #fffcf7;
+            border-radius: 48px;
+            padding: 3.2rem 3rem;
+            box-shadow: 0 20px 40px -12px rgba(150, 80, 20, 0.25), 0 8px 20px rgba(0,0,0,0.03);
+            backdrop-filter: blur(2px);
+            transition: box-shadow 0.25s;
+        }
+
+        @media (max-width: 640px) {
+            .card {
+                padding: 2.2rem 1.8rem;
+                border-radius: 32px;
+            }
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #5e3c1f;
+            margin-bottom: 0.2rem;
+            line-height: 1.2;
+        }
+
+        .subhead {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.8rem;
+            font-size: 1rem;
+            color: #866a4a;
+            border-bottom: 2px solid #edd5bd;
+            padding-bottom: 1rem;
+        }
+
+        .subhead span {
+            background: #eadac8;
+            padding: 0.25rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: #4d3622;
+            font-weight: 500;
+        }
+
+        .summary {
+            background: #f9efe6;
+            padding: 1.6rem 2rem;
+            border-radius: 28px;
+            margin-bottom: 2.6rem;
+            border: 1px solid #f0dfcf;
+        }
+
+        .summary p {
+            font-size: 1.1rem;
+            max-width: 80%;
+        }
+
+        @media (max-width: 560px) {
+            .summary p {
+                max-width: 100%;
+            }
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin-bottom: 2.4rem;
+        }
+
+        @media (max-width: 700px) {
+            .highlights-grid {
+                grid-template-columns: 1fr;
+                gap: 1.4rem;
+            }
+        }
+
+        .highlight-item {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 1.5rem 1.8rem;
+            box-shadow: 0 4px 12px rgba(150, 80, 20, 0.05);
+            border: 1px solid #eedbcb;
+            transition: transform 0.1s ease;
+        }
+
+        .highlight-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: #4b311b;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .highlight-item p {
+            font-size: 0.95rem;
+            color: #5f4a35;
+        }
+
+        .usage-note {
+            background: #faf2ea;
+            border-radius: 28px;
+            padding: 1.6rem 2rem;
+            margin-bottom: 2.4rem;
+            border-left: 8px solid #dbb594;
+        }
+
+        .usage-note h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #4b311b;
+            margin-bottom: 0.6rem;
+        }
+
+        .usage-note p {
+            color: #5b4532;
+        }
+
+        .faq-mini {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 2rem;
+            background: #fffbf5;
+            padding: 1.6rem 2rem;
+            border-radius: 28px;
+            border: 1px solid #e6d3c2;
+            margin-bottom: 2.2rem;
+        }
+
+        .faq-mini dt {
+            font-weight: 600;
+            color: #4e3724;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-mini dd {
+            color: #6b5542;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .faq-mini > div {
+            flex: 1 1 180px;
+        }
+
+        .link-sentence {
+            background: #f1e4d7;
+            padding: 1.2rem 2rem;
+            border-radius: 100px;
+            font-size: 1.1rem;
+            text-align: center;
+            color: #3c2c1d;
+            font-weight: 450;
+            letter-spacing: 0.01em;
+            border: 1px solid #e4cfbb;
+            margin-top: 0.4rem;
+        }
+
+        .link-sentence a {
+            color: #7b522f;
+            text-decoration: none;
+            font-weight: 600;
+            background: transparent;
+            padding: 0.15rem 0.2rem;
+            border-bottom: 2px solid #c8a988;
+            transition: background 0.15s, border-color 0.2s;
+        }
+
+        .link-sentence a:hover {
+            background: #e6d2be;
+            border-bottom-color: #8f6a45;
+        }
+
+        .footnote {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            text-align: center;
+            color: #8c755e;
+            letter-spacing: 0.3px;
+            border-top: 1px dashed #dccbbb;
+            padding-top: 1.5rem;
+        }
+
+        .footnote span {
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h1>华体会 · 产品摘要</h1>
+    <div class="subhead">
+        一份简明介绍
+        <span>使用场景</span>
+        <span>功能亮点</span>
+    </div>
+
+    <div class="summary">
+        <p>对于刚接触 <strong>华体会</strong> 的用户，最直接的问题是：“这个网站是做什么的？” 简单说，它围绕特定内容需求提供信息整合与交互入口，适用于希望快速定位相关资源的人。以下从几个侧面说明其用途与特点。</p>
+    </div>
+
+    <div class="highlights-grid">
+        <div class="highlight-item">
+            <h3>📌 信息集中</h3>
+            <p>将分散的板块、常见需求归纳在统一页面，省去在多处切换的麻烦。适合初次探索或日常使用。</p>
+        </div>
+        <div class="highlight-item">
+            <h3>⚡ 轻量引导</h3>
+            <p>结构清晰，主要功能入口一目了然。操作路径短，尤其适合对效率有要求的场景。</p>
+        </div>
+        <div class="highlight-item">
+            <h3>🛡️ 风格克制</h3>
+            <p>界面不过度堆砌，聚焦于实用。内容与链接均保持自然，避免干扰判断。</p>
+        </div>
+        <div class="highlight-item">
+            <h3>🌱 持续调整</h3>
+            <p>根据反馈与需求变化迭代，不锁定单一形态。当前版本已整合常见使用路径。</p>
+        </div>
+    </div>
+
+    <div class="usage-note">
+        <h3>💡 使用建议</h3>
+        <p>如果你是第一次浏览，建议先查看核心分类，了解整体布局；日常使用时，可直接从常用入口进入，节省时间。不必追求一次性理解所有模块，按需查找即可。页面中提供的链接（如 <a href="https://webs-index-hth.com" style="color:#7b522f; font-weight:600; text-decoration:underline; text-underline-offset:3px;">华体会</a>）均指向对应的功能区域，可根据自身兴趣进一步探索。</p>
+    </div>
+
+    <div class="faq-mini">
+        <div>
+            <dt>内容是否实时更新？</dt>
+            <dd>视具体板块而定，部分区域保持动态，部分为静态说明。建议以页面实际显示为准。</dd>
+        </div>
+        <div>
+            <dt>移动端体验如何？</dt>
+            <dd>页面采用响应式设计，在手机与平板上可正常浏览，卡片与文字自动适配屏幕宽度。</dd>
+        </div>
+        <div>
+            <dt>是否需要注册？</dt>
+            <dd>当前浏览无需身份验证。特定交互功能是否需注册，以相关页面提示为准。</dd>
+        </div>
+    </div>
+
+    <div class="link-sentence">
+        <span>若需了解完整服务范围，可查看 </span><a href="https://webs-index-hth.com">华体会</a><span> 的主页面，其中列出了更详细的分类与说明。</span>
+    </div>
+
+    <div class="footnote">
+        <span>本页仅为产品介绍摘要，不构成任何形式的承诺或保证。使用前请结合自身判断。</span>
+    </div>
+</div>
+</body>
+</html>
